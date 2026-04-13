@@ -1,0 +1,27 @@
+{
+  "name": "slack-enterprise-mcp",
+  "description": "MEOK AI Labs \u2014 Enterprise-grade Slack integration with full audit trails for compliance.",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/slack-enterprise-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "send_message",
+    "search_messages",
+    "list_channels",
+    "get_thread",
+    "create_channel",
+    "set_channel_topic",
+    "get_audit_log",
+    "summarize_channel"
+  ],
+  "categories": [
+    "Communication",
+    "Enterprise"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}

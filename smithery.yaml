@@ -1,0 +1,10 @@
+name: slack-enterprise-mcp
+description: "MEOK AI Labs — Enterprise-grade Slack integration with full audit trails for compliance."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/slack-enterprise-mcp
+license: MIT
+categories: [Communication, Enterprise]
+tags: [slack, team-communication, workspace-management, slack-bot, enterprise-messaging]
+runtime: python
+entrypoint: server.py
