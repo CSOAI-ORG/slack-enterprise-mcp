@@ -1,27 +1,162 @@
 {
   "name": "slack-enterprise-mcp",
-  "description": "MEOK AI Labs \u2014 Enterprise-grade Slack integration with full audit trails for compliance.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/slack-enterprise-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
   "tools": [
-    "send_message",
-    "search_messages",
-    "list_channels",
-    "get_thread",
-    "create_channel",
-    "set_channel_topic",
-    "get_audit_log",
-    "summarize_channel"
-  ],
-  "categories": [
-    "Communication",
-    "Enterprise"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "send_message",
+      "description": "Send a message to a Slack channel or thread. Every message is audit-logged",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "thread_ts": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "channel",
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "search_messages",
+      "description": "Search messages across the entire Slack workspace. Supports Slack search",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "list_channels",
+      "description": "List Slack channels with member counts and topics. Types can be",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "types": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_thread",
+      "description": "Get a full thread with all replies. Provide the channel ID and the",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "thread_ts": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "channel",
+          "thread_ts"
+        ]
+      }
+    },
+    {
+      "name": "create_channel",
+      "description": "Create a new Slack channel. Name must be lowercase, no spaces (use hyphens).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "is_private": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "set_channel_topic",
+      "description": "Update the topic of a Slack channel. Provide channel ID or name.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "channel",
+          "topic"
+        ]
+      }
+    },
+    {
+      "name": "get_audit_log",
+      "description": "Return the audit trail of all MCP actions performed through this server.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "action_filter": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "summarize_channel",
+      "description": "Get the last N messages from a channel and provide a structured summary.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "message_count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "channel"
+        ]
+      }
+    }
+  ]
 }

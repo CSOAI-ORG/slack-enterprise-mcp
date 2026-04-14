@@ -1,10 +1,90 @@
 name: slack-enterprise-mcp
-description: "MEOK AI Labs — Enterprise-grade Slack integration with full audit trails for compliance."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/slack-enterprise-mcp
-license: MIT
-categories: [Communication, Enterprise]
-tags: [slack, team-communication, workspace-management, slack-bot, enterprise-messaging]
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: send_message
+  description: Send a message to a Slack channel or thread. Every message is audit-logged
+  parameters:
+  - name: channel
+    type: string
+    required: true
+  - name: text
+    type: string
+    required: true
+  - name: thread_ts
+    type: string
+    required: false
+- name: search_messages
+  description: Search messages across the entire Slack workspace. Supports Slack search
+  parameters:
+  - name: query
+    type: string
+    required: true
+  - name: count
+    type: integer
+    required: false
+  - name: sort
+    type: string
+    required: false
+- name: list_channels
+  description: List Slack channels with member counts and topics. Types can be
+  parameters:
+  - name: limit
+    type: integer
+    required: false
+  - name: types
+    type: string
+    required: false
+- name: get_thread
+  description: Get a full thread with all replies. Provide the channel ID and the
+  parameters:
+  - name: channel
+    type: string
+    required: true
+  - name: thread_ts
+    type: string
+    required: true
+  - name: limit
+    type: integer
+    required: false
+- name: create_channel
+  description: Create a new Slack channel. Name must be lowercase, no spaces (use
+    hyphens).
+  parameters:
+  - name: name
+    type: string
+    required: true
+  - name: description
+    type: string
+    required: false
+  - name: is_private
+    type: boolean
+    required: false
+- name: set_channel_topic
+  description: Update the topic of a Slack channel. Provide channel ID or name.
+  parameters:
+  - name: channel
+    type: string
+    required: true
+  - name: topic
+    type: string
+    required: true
+- name: get_audit_log
+  description: Return the audit trail of all MCP actions performed through this server.
+  parameters:
+  - name: limit
+    type: integer
+    required: false
+  - name: action_filter
+    type: string
+    required: false
+- name: summarize_channel
+  description: Get the last N messages from a channel and provide a structured summary.
+  parameters:
+  - name: channel
+    type: string
+    required: true
+  - name: message_count
+    type: integer
+    required: false

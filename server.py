@@ -11,6 +11,11 @@ Install: pip install mcp slack_sdk
 Run:     SLACK_BOT_TOKEN=xoxb-... python server.py
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import json
 import os
 import time
@@ -95,10 +100,14 @@ mcp = FastMCP(
 
 
 @mcp.tool()
-def send_message(channel: str, text: str, thread_ts: str = "") -> dict:
+def send_message(channel: str, text: str, thread_ts: str = "", api_key: str = "") -> dict:
     """Send a message to a Slack channel or thread. Every message is audit-logged
     for enterprise compliance. Provide channel name (e.g. #general) or channel ID.
     Optionally provide thread_ts to reply in a thread."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -125,10 +134,14 @@ def send_message(channel: str, text: str, thread_ts: str = "") -> dict:
 
 
 @mcp.tool()
-def search_messages(query: str, count: int = 20, sort: str = "timestamp") -> dict:
+def search_messages(query: str, count: int = 20, sort: str = "timestamp", api_key: str = "") -> dict:
     """Search messages across the entire Slack workspace. Supports Slack search
     modifiers like 'in:#channel', 'from:@user', 'before:2024-01-01'.
     Sort by 'timestamp' (newest first) or 'score' (most relevant)."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -158,9 +171,13 @@ def search_messages(query: str, count: int = 20, sort: str = "timestamp") -> dic
 
 
 @mcp.tool()
-def list_channels(limit: int = 100, types: str = "public_channel") -> dict:
+def list_channels(limit: int = 100, types: str = "public_channel", api_key: str = "") -> dict:
     """List Slack channels with member counts and topics. Types can be
     'public_channel', 'private_channel', or 'public_channel,private_channel'."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -189,9 +206,13 @@ def list_channels(limit: int = 100, types: str = "public_channel") -> dict:
 
 
 @mcp.tool()
-def get_thread(channel: str, thread_ts: str, limit: int = 50) -> dict:
+def get_thread(channel: str, thread_ts: str, limit: int = 50, api_key: str = "") -> dict:
     """Get a full thread with all replies. Provide the channel ID and the
     thread's parent message timestamp (thread_ts)."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -216,9 +237,13 @@ def get_thread(channel: str, thread_ts: str, limit: int = 50) -> dict:
 
 
 @mcp.tool()
-def create_channel(name: str, description: str = "", is_private: bool = False) -> dict:
+def create_channel(name: str, description: str = "", is_private: bool = False, api_key: str = "") -> dict:
     """Create a new Slack channel. Name must be lowercase, no spaces (use hyphens).
     Optionally set a description/purpose and make it private."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -246,8 +271,12 @@ def create_channel(name: str, description: str = "", is_private: bool = False) -
 
 
 @mcp.tool()
-def set_channel_topic(channel: str, topic: str) -> dict:
+def set_channel_topic(channel: str, topic: str, api_key: str = "") -> dict:
     """Update the topic of a Slack channel. Provide channel ID or name."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -269,10 +298,14 @@ def set_channel_topic(channel: str, topic: str) -> dict:
 
 
 @mcp.tool()
-def get_audit_log(limit: int = 50, action_filter: str = "") -> dict:
+def get_audit_log(limit: int = 50, action_filter: str = "", api_key: str = "") -> dict:
     """Return the audit trail of all MCP actions performed through this server.
     Enterprise compliance feature -- shows who did what and when.
     Optionally filter by action name (e.g. 'send_message', 'create_channel')."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -298,9 +331,13 @@ def get_audit_log(limit: int = 50, action_filter: str = "") -> dict:
 
 
 @mcp.tool()
-def summarize_channel(channel: str, message_count: int = 50) -> dict:
+def summarize_channel(channel: str, message_count: int = 50, api_key: str = "") -> dict:
     """Get the last N messages from a channel and provide a structured summary.
     Returns messages grouped by topic threads, active participants, and key highlights."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
