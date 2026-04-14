@@ -58,7 +58,7 @@ def _audit_log(action: str, params: dict, result_summary: str, caller: str = "an
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "action": action,
         "caller": caller,
-        "params": {k: v for k, v in params.items() if k not in ("token",)},
+        "params": {k: v for k, v in params.items() if k not in ("token")},
         "result_summary": result_summary[:500],
     }
     _audit_entries.append(entry)
@@ -91,8 +91,7 @@ mcp = FastMCP(
     instructions=(
         "Enterprise Slack integration with compliance audit trails. "
         "Every action is logged for governance. Requires SLACK_BOT_TOKEN env var."
-    ),
-)
+    ))
 
 
 @mcp.tool()
