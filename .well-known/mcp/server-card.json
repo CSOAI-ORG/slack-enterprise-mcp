@@ -1,0 +1,70 @@
+{
+  "name": "Slack Enterprise MCP",
+  "description": "Enterprise Slack integration with compliance audit trails. Every action is logged for governance. Requires SLACK_BOT_TOKEN env var.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/slack-enterprise-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "send_message",
+      "description": "Send a message to a Slack channel or thread. Every message is audit-logged"
+    },
+    {
+      "name": "search_messages",
+      "description": "Search messages across the entire Slack workspace. Supports Slack search"
+    },
+    {
+      "name": "list_channels",
+      "description": "List Slack channels with member counts and topics. Types can be"
+    },
+    {
+      "name": "get_thread",
+      "description": "Get a full thread with all replies. Provide the channel ID and the"
+    },
+    {
+      "name": "create_channel",
+      "description": "Create a new Slack channel. Name must be lowercase, no spaces (use hyphens)."
+    },
+    {
+      "name": "set_channel_topic",
+      "description": "Update the topic of a Slack channel. Provide channel ID or name."
+    },
+    {
+      "name": "get_audit_log",
+      "description": "Return the audit trail of all MCP actions performed through this server."
+    },
+    {
+      "name": "summarize_channel",
+      "description": "Get the last N messages from a channel and provide a structured summary."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Blockchain & Web3",
+    "Security & Compliance"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
