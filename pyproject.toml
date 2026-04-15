@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/slack-enterprise-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+slack_enterprise_mcp = "server:main"
