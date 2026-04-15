@@ -1,6 +1,6 @@
 {
   "name": "slack-enterprise-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 \n        ",
+  "description": "Slack Enterprise MCP server. Tools: send message, search messages, list channels. Built by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {

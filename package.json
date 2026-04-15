@@ -1,7 +1,7 @@
 {
   "name": "slack-enterprise-mcp",
   "version": "1.0.0",
-  "description": "MEOK AI Labs \u2014 slack enterprise MCP Server",
+  "description": "Slack Enterprise MCP server. Tools: send message, search messages, list channels. Built by MEOK AI Labs.",
   "main": "server.py",
   "mcp": {
     "name": "slack enterprise",
