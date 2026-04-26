@@ -106,7 +106,7 @@ def send_message(channel: str, text: str, thread_ts: str = "", api_key: str = ""
     Optionally provide thread_ts to reply in a thread."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
 
     err = _check_rate_limit()
     if err:
@@ -140,7 +140,7 @@ def search_messages(query: str, count: int = 20, sort: str = "timestamp", api_ke
     Sort by 'timestamp' (newest first) or 'score' (most relevant)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
 
     err = _check_rate_limit()
     if err:
@@ -176,7 +176,7 @@ def list_channels(limit: int = 100, types: str = "public_channel", api_key: str 
     'public_channel', 'private_channel', or 'public_channel,private_channel'."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
 
     err = _check_rate_limit()
     if err:
@@ -211,7 +211,7 @@ def get_thread(channel: str, thread_ts: str, limit: int = 50, api_key: str = "")
     thread's parent message timestamp (thread_ts)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
 
     err = _check_rate_limit()
     if err:
@@ -242,7 +242,7 @@ def create_channel(name: str, description: str = "", is_private: bool = False, a
     Optionally set a description/purpose and make it private."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
 
     err = _check_rate_limit()
     if err:
@@ -275,7 +275,7 @@ def set_channel_topic(channel: str, topic: str, api_key: str = "") -> dict:
     """Update the topic of a Slack channel. Provide channel ID or name."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
 
     err = _check_rate_limit()
     if err:
@@ -304,7 +304,7 @@ def get_audit_log(limit: int = 50, action_filter: str = "", api_key: str = "") -
     Optionally filter by action name (e.g. 'send_message', 'create_channel')."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
 
     err = _check_rate_limit()
     if err:
@@ -336,7 +336,7 @@ def summarize_channel(channel: str, message_count: int = 50, api_key: str = "") 
     Returns messages grouped by topic threads, active participants, and key highlights."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
 
     err = _check_rate_limit()
     if err:
