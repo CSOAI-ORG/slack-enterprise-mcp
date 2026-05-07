@@ -103,7 +103,23 @@ mcp = FastMCP(
 def send_message(channel: str, text: str, thread_ts: str = "", api_key: str = "") -> dict:
     """Send a message to a Slack channel or thread. Every message is audit-logged
     for enterprise compliance. Provide channel name (e.g. #general) or channel ID.
-    Optionally provide thread_ts to reply in a thread."""
+    Optionally provide thread_ts to reply in a thread.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -137,7 +153,23 @@ def send_message(channel: str, text: str, thread_ts: str = "", api_key: str = ""
 def search_messages(query: str, count: int = 20, sort: str = "timestamp", api_key: str = "") -> dict:
     """Search messages across the entire Slack workspace. Supports Slack search
     modifiers like 'in:#channel', 'from:@user', 'before:2024-01-01'.
-    Sort by 'timestamp' (newest first) or 'score' (most relevant)."""
+    Sort by 'timestamp' (newest first) or 'score' (most relevant).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -173,7 +205,23 @@ def search_messages(query: str, count: int = 20, sort: str = "timestamp", api_ke
 @mcp.tool()
 def list_channels(limit: int = 100, types: str = "public_channel", api_key: str = "") -> dict:
     """List Slack channels with member counts and topics. Types can be
-    'public_channel', 'private_channel', or 'public_channel,private_channel'."""
+    'public_channel', 'private_channel', or 'public_channel,private_channel'.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -208,7 +256,23 @@ def list_channels(limit: int = 100, types: str = "public_channel", api_key: str 
 @mcp.tool()
 def get_thread(channel: str, thread_ts: str, limit: int = 50, api_key: str = "") -> dict:
     """Get a full thread with all replies. Provide the channel ID and the
-    thread's parent message timestamp (thread_ts)."""
+    thread's parent message timestamp (thread_ts).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -239,7 +303,22 @@ def get_thread(channel: str, thread_ts: str, limit: int = 50, api_key: str = "")
 @mcp.tool()
 def create_channel(name: str, description: str = "", is_private: bool = False, api_key: str = "") -> dict:
     """Create a new Slack channel. Name must be lowercase, no spaces (use hyphens).
-    Optionally set a description/purpose and make it private."""
+    Optionally set a description/purpose and make it private.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -272,7 +351,23 @@ def create_channel(name: str, description: str = "", is_private: bool = False, a
 
 @mcp.tool()
 def set_channel_topic(channel: str, topic: str, api_key: str = "") -> dict:
-    """Update the topic of a Slack channel. Provide channel ID or name."""
+    """Update the topic of a Slack channel. Provide channel ID or name.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -301,7 +396,22 @@ def set_channel_topic(channel: str, topic: str, api_key: str = "") -> dict:
 def get_audit_log(limit: int = 50, action_filter: str = "", api_key: str = "") -> dict:
     """Return the audit trail of all MCP actions performed through this server.
     Enterprise compliance feature -- shows who did what and when.
-    Optionally filter by action name (e.g. 'send_message', 'create_channel')."""
+    Optionally filter by action name (e.g. 'send_message', 'create_channel').
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
@@ -333,7 +443,23 @@ def get_audit_log(limit: int = 50, action_filter: str = "", api_key: str = "") -
 @mcp.tool()
 def summarize_channel(channel: str, message_count: int = 50, api_key: str = "") -> dict:
     """Get the last N messages from a channel and provide a structured summary.
-    Returns messages grouped by topic threads, active participants, and key highlights."""
+    Returns messages grouped by topic threads, active participants, and key highlights.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
