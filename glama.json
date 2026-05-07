@@ -1,10 +1,4 @@
 {
-  "name": "slack-enterprise-mcp",
-  "description": "MEOK AI Labs \u2014 slack-enterprise-mcp",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/slack-enterprise-mcp",
-  "license": "MIT",
-  "runtime": "python",
-  "entryPoint": "mcp-wrapper.py"
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["CSOAI-ORG"]
 }
