@@ -1,3 +1,5 @@
+[![slack-enterprise-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/slack-enterprise-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/slack-enterprise-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/slack-enterprise-mcp)](https://github.com/CSOAI-ORG/slack-enterprise-mcp/stargazers)
