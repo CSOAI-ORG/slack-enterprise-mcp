@@ -119,6 +119,13 @@ def send_message(channel: str, text: str, thread_ts: str = "", api_key: str = ""
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        channel (str): The channel to analyze or process.
+        text (str): The text to analyze or process.
+        thread_ts (str): The thread ts to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -183,6 +190,13 @@ def search_messages(query: str, count: int = 20, sort: str = "timestamp", api_ke
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        query (str): The query to analyze or process.
+        count (int): The count to analyze or process.
+        sort (str): The sort to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -249,6 +263,12 @@ def list_channels(limit: int = 100, types: str = "public_channel", api_key: str 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        limit (int): The limit to analyze or process.
+        types (str): The types to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -314,6 +334,13 @@ def get_thread(channel: str, thread_ts: str, limit: int = 50, api_key: str = "")
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        channel (str): The channel to analyze or process.
+        thread_ts (str): The thread ts to analyze or process.
+        limit (int): The limit to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -374,6 +401,13 @@ def create_channel(name: str, description: str = "", is_private: bool = False, a
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        name (str): The name to analyze or process.
+        description (str): The description to analyze or process.
+        is_private (bool): The is private to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -437,6 +471,12 @@ def set_channel_topic(channel: str, topic: str, api_key: str = "") -> dict:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        channel (str): The channel to analyze or process.
+        topic (str): The topic to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -495,6 +535,12 @@ def get_audit_log(limit: int = 50, action_filter: str = "", api_key: str = "") -
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        limit (int): The limit to analyze or process.
+        action_filter (str): The action filter to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -557,6 +603,12 @@ def summarize_channel(channel: str, message_count: int = 50, api_key: str = "") 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        channel (str): The channel to analyze or process.
+        message_count (int): The message count to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
