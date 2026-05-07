@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "slack-enterprise-mcp"
-version = "1.0.3"
+version = "1.0.4"
 readme = "README.md"
 description = "Slack Enterprise MCP server. Tools: send message, search messages, list channels. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
