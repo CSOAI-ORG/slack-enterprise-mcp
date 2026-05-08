@@ -6,40 +6,55 @@
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/slack-enterprise-mcp)](https://github.com/CSOAI-ORG/slack-enterprise-mcp/stargazers)
+# Slack Enterprise MCP
 
-# uslackU enterpriseU mcp
+**MCP server for slack enterprise mcp operations**
 
-**Enterprise-grade Slack integration with compliance audit trails for AI agents. Every action is logged locally for governance, regulatory compliance, and security review.**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/slack-enterprise-mcp)](https://www.npmjs.com/package/@meok-ai/slack-enterprise-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-slack-enterprise-mcp)](https://pypi.org/project/meok-slack-enterprise-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/slack-enterprise-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Slack Enterprise MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `send_message` | Send a message to a Slack channel or thread. Every message is audit-logged |
+| `search_messages` | Search messages across the entire Slack workspace. Supports Slack search |
+| `list_channels` | List Slack channels with member counts and topics. Types can be |
+| `get_thread` | Get a full thread with all replies. Provide the channel ID and the |
+| `create_channel` | Create a new Slack channel. Name must be lowercase, no spaces (use hyphens). |
+| `set_channel_topic` | Update the topic of a Slack channel. Provide channel ID or name. |
+| `get_audit_log` | Return the audit trail of all MCP actions performed through this server. |
+| `summarize_channel` | Get the last N messages from a channel and provide a structured summary. |
 
 ## Installation
 
 ```bash
-pip install slack-enterprise-mcp
-# or
-npm install -g @meok-ai/slack-enterprise-mcp
+pip install meok-slack-enterprise-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config:
 
-## Enterprise Support
-
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+```json
+{
+  "mcpServers": {
+    "slack-enterprise-mcp": {
+      "command": "python",
+      "args": ["-m", "meok_slack_enterprise_mcp.server"]
+    }
+  }
+}
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
+MIT © [MEOK AI Labs](https://meok.ai)
 <!-- mcp-name: io.github.CSOAI-ORG/slack-enterprise-mcp -->
