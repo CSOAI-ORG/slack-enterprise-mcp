@@ -1,0 +1,35 @@
+# Slack Enterprise MCP
+
+> Slack Enterprise MCP — automation tooling for slack enterprise
+
+`slack-enterprise-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+
+## Install
+
+```bash
+pip install slack-enterprise-mcp
+```
+
+Or run without installing:
+
+```bash
+uvx slack-enterprise-mcp
+```
+
+## Tools
+
+- `send_message` — Send a message to a Slack channel or thread. Every message is audit-logged
+- `search_messages` — Search messages across the entire Slack workspace. Supports Slack search
+- `list_channels` — List Slack channels with member counts and topics. Types can be
+- `get_thread` — Get a full thread with all replies. Provide the channel ID and the
+- `create_channel` — Create a new Slack channel. Name must be lowercase, no spaces (use hyphens).
+- `set_channel_topic` — Update the topic of a Slack channel. Provide channel ID or name.
+- `get_audit_log` — Return the audit trail of all MCP actions performed through this server.
+- `summarize_channel` — Get the last N messages from a channel and provide a structured summary.
+
+## Links
+
+- Source: https://github.com/CSOAI-ORG/slack-enterprise-mcp
+- PyPI: https://pypi.org/project/slack-enterprise-mcp/
+- MEOK AI Labs: https://meok.ai
+- Council of AI: https://councilof.ai
