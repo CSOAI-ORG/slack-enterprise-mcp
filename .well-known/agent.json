@@ -1,0 +1,95 @@
+{
+  "name": "slack-enterprise-mcp",
+  "description": "Slack Enterprise MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/slack-enterprise-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "send_message",
+      "name": "Send Message",
+      "description": "send_message via slack-enterprise-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "search_messages",
+      "name": "Search Messages",
+      "description": "search_messages via slack-enterprise-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "list_channels",
+      "name": "List Channels",
+      "description": "list_channels via slack-enterprise-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_thread",
+      "name": "Get Thread",
+      "description": "get_thread via slack-enterprise-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "create_channel",
+      "name": "Create Channel",
+      "description": "create_channel via slack-enterprise-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "set_channel_topic",
+      "name": "Set Channel Topic",
+      "description": "set_channel_topic via slack-enterprise-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_audit_log",
+      "name": "Get Audit Log",
+      "description": "get_audit_log via slack-enterprise-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "summarize_channel",
+      "name": "Summarize Channel",
+      "description": "summarize_channel via slack-enterprise-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

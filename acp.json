@@ -1,0 +1,26 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "slack-enterprise-mcp",
+    "description": "Slack Enterprise MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "slack-enterprise-mcp"
+      }
+    ],
+    "capabilities": [
+      "send_message",
+      "search_messages",
+      "list_channels",
+      "get_thread",
+      "create_channel",
+      "set_channel_topic",
+      "get_audit_log",
+      "summarize_channel"
+    ]
+  }
+}
