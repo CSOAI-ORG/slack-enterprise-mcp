@@ -1,0 +1,37 @@
+{
+  "name": "slack-enterprise-mcp",
+  "title": "Slack Enterprise Mcp",
+  "description": "Slack Enterprise MCP server. Tools: send message, search messages, list channels. Built by MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "send_message"
+    },
+    {
+      "name": "search_messages"
+    },
+    {
+      "name": "list_channels"
+    },
+    {
+      "name": "get_thread"
+    },
+    {
+      "name": "create_channel"
+    },
+    {
+      "name": "set_channel_topic"
+    },
+    {
+      "name": "get_audit_log"
+    },
+    {
+      "name": "summarize_channel"
+    }
+  ]
+}

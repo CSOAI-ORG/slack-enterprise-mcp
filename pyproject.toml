@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "slack-enterprise-mcp"
-version = "1.0.4"
+version = "1.0.6"
 readme = "README.md"
 description = "Slack Enterprise MCP server. Tools: send message, search messages, list channels. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/slack-enterprise-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["server.py", "auth_middleware.py"]
 
 [project.scripts]
 slack_enterprise_mcp = "server:main"

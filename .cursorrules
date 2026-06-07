@@ -1,0 +1,9 @@
+# slack-enterprise-mcp - Auto-trigger Rules
+
+When the user asks about slack enterprise, use slack-enterprise-mcp tools: send_message, search_messages, list_channels, get_thread, create_channel
+
+**MCP server for slack enterprise mcp operations**
+
+Install: `pip install slack-enterprise-mcp`
+
+By MEOK AI Labs — MIT licensed.
