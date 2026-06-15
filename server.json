@@ -4,9 +4,8 @@
   "version": "1.0.7",
   "description": "Slack Enterprise MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/slack-enterprise-mcp",
-    "source": "https://github.com/CSOAI-ORG/slack-enterprise-mcp"
+    "source": "github"
   },
   "packages": [
     {
