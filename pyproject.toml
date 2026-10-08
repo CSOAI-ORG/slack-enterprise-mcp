@@ -9,7 +9,7 @@ description = "Slack Enterprise MCP server. Tools: send message, search messages
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
-dependencies = ["mcp>=1.0.0", "slack-sdk>=3.20.0", ]
+dependencies = ["mcp>=2.0.0", "slack-sdk>=3.20.0", ]
 keywords = ["mcp", "ai", "meok", "slack", "enterprise", "mcp/"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/slack-enterprise-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py", "auth_middleware.py"]
+only-include = ["server.py", "auth_middleware.py", "mcp2026_shim.py"]
 
 [project.scripts]
 slack_enterprise_mcp = "server:main"
